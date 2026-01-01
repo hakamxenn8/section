@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>New Year Sections</title>
+<style>
+body{
+  margin:0;
+  font-family:monospace;
+  background:#000;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* efek confetti kecil */
+@keyframes pop {
+  from{transform:translateY(-50px) rotate(0deg);}
+  to{transform:translateY(100vh) rotate(360deg);}
+}
+
+.confetti{
+  position:fixed;
+  width:8px;
+  height:8px;
+  background:gold;
+  top:-10px;
+  animation: pop 3s linear infinite;
+  opacity:.7;
+}
+
+/* style section acak */
+section{
+  padding:80px 30px;
+  min-height:60vh;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  font-size:25px;
+  letter-spacing:2px;
+  text-shadow:0 0 15px white;
+  position:relative;
+}
+
+/* efek acak */
+.one{background:linear-gradient(120deg,#ff0080,#ffdd00);}
+.two{background:linear-gradient(140deg,#00ffea,#0033ff);}
+.three{background:linear-gradient(100deg,#ff4d00,#ff0099);}
+.four{background:linear-gradient(135deg,#8aff00,#0088ff);}
+.five{background:linear-gradient(150deg,#7700ff,#ff00ff);}
+
+section h1{
+  transform:rotate(-5deg);
+}
+section span{
+  display:block;
+  font-size:14px;
+  margin-top:10px;
+  opacity:.8;
+}
+
+.random{
+  position:absolute;
+  font-size:60px;
+  opacity:.3;
+  mix-blend:overlay;
+}
+</style>
+</head>
+
+<body>
+
+<!-- confetti -->
+<script>
+for(let i=0;i<50;i++){
+ let c=document.createElement("div");
+ c.className="confetti";
+ c.style.left=Math.random()*100+"vw";
+ c.style.background=["#ff0","#0ff","#f0f","white","orange"][Math.floor(Math.random()*5)];
+ c.style.animationDuration=(2+Math.random()*3)+"s";
+ document.body.appendChild(c);
+}
+</script>
+
+<section class="one">
+  <h1>✨ HAPPY NEW YEAR 2026 ✨</h1>
+  <span>White noise of fireworks & dreams</span>
+  <div class="random">2026</div>
+</section>
+
+<section class="two">
+  <h1>🔥 LET’S RESET OUR STORY</h1>
+  <span>New mindset – new vibe</span>
+  <div class="random">🎇</div>
+</section>
+
+<section class="three">
+  <h1>🎉 CHAOTIC BUT STILL SHINING</h1>
+  <span>Berantakan tapi tetap keren</span>
+  <div class="random">✨</div>
+</section>
+
+<section class="four">
+  <h1>🚀 LEVEL UP THIS YEAR</h1>
+  <span>Upgrade diri tanpa drama</span>
+  <div class="random">⭐</div>
+</section>
+
+<section class="five">
+  <h1>💛 THANK YOU, NEXT JOURNEY</h1>
+  <span>Semoga semua lebih hebat</span>
+  <div class="random">🎆</div>
+</section>
+
+</body>
+</html>
